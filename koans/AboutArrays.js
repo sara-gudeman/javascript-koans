@@ -29,10 +29,12 @@ describe("About Arrays", function() {
     expect(array).toEqual([1]);
     
     array[1] = 2;
-    expect(array).toEqual([1, FILL_ME_IN]);
+    expect(array).toEqual([1, 2]);
+    // FIX (fill in): index 1 value set equal to 2
     
     array.push(3);
-    expect(array).toEqual(FILL_ME_IN);
+    expect(array).toEqual([1, 2, 3]);
+    // FIX (fill in): push method used to assign index 3 a value of 3
   });
 
   it("should understand array length", function () {
