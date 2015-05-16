@@ -40,15 +40,19 @@ describe("About Arrays", function() {
   it("should understand array length", function () {
     var fourNumberArray = [1, 2, 3, 4];
 
-    expect(fourNumberArray.length).toBe(FILL_ME_IN);
+    expect(fourNumberArray.length).toBe(4); 
+    // FIX (fill in): array length is 4
     fourNumberArray.push(5, 6);
-    expect(fourNumberArray.length).toBe(FILL_ME_IN);
+    expect(fourNumberArray.length).toBe(6);
+    // FIX (fill in): two values pushed to array--length increased by 2
 
     var tenEmptyElementArray = new Array(10); 
-    expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
+    expect(tenEmptyElementArray.length).toBe(10);
+    // FIX (fill in): length of array is 10
 
     tenEmptyElementArray.length = 5;
-    expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
+    expect(tenEmptyElementArray.length).toBe(5);
+    // FIX (fill in): empty array length shortened to 5
   });
 
   it("should slice arrays", function () {
