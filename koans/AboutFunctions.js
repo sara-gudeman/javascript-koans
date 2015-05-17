@@ -47,9 +47,11 @@ describe("About Functions", function() {
     }
     
     var increaseBy3 = makeIncreaseByFunction(3);
+    // returns function(numberToIncrease) {return numberToIncrease + 3}
     var increaseBy5 = makeIncreaseByFunction(5);
+    // returns function(numberToIncrease) {return numberToIncrease + 5}
     
-    expect(increaseBy3(10) + increaseBy5(10)).toBe(FILL_ME_IN);
+    expect(increaseBy3(10) + increaseBy5(10)).toBe(28);
   });
 
   it("should allow extra function arguments", function () {
@@ -58,13 +60,13 @@ describe("About Functions", function() {
       return firstArg;
     }
     
-    expect(returnFirstArg("first", "second", "third")).toBe(FILL_ME_IN);
+    expect(returnFirstArg("first", "second", "third")).toBe("first");
     
     function returnSecondArg(firstArg, secondArg) {
       return secondArg;
     }
-    
-    expect(returnSecondArg("only give first arg")).toBe(FILL_ME_IN);
+
+    expect(returnSecondArg("only give first arg")).toBe(undefined);
     
     function returnAllArgs() {
       var argsArray = [];
@@ -74,7 +76,7 @@ describe("About Functions", function() {
       return argsArray.join(",");
     }
     
-    expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
+    expect(returnAllArgs("first", "second", "third")).toBe("first,second,third");
   });
 
   it("should pass functions as values", function () {
