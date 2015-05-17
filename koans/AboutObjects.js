@@ -47,8 +47,8 @@ describe("About Objects", function () {
       }
     };
    
-    expect(currentYear).toBe(FILL_ME_IN);
-    expect(meglomaniac.calculateAge()).toBe(FILL_ME_IN);
+    expect(currentYear).toBe(2015); // current year (right now) is 2015
+    expect(meglomaniac.calculateAge()).toBe(2015 - 1970);
   });
 
   describe("'in' keyword", function () {
@@ -65,21 +65,23 @@ describe("About Objects", function () {
 
       var hasBomb = "theBomb" in meglomaniac;
      
-      expect(hasBomb).toBe(FILL_ME_IN);
+      expect(hasBomb).toBe(true);
+      // obj meglomaniac contains prop hasBomb
     });
 
     it("should not have the detonator however", function () {
 
       var hasDetonator = "theDetonator" in meglomaniac;
      
-      expect(hasDetonator).toBe(FILL_ME_IN);
+      expect(hasDetonator).toBe(false);
+      // obj meglomaniac does NOT contain prop hasDetonator
     });    
   });
 
   it("should know that properties can be added and deleted", function () {
     var meglomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
 
-    expect("secretary" in meglomaniac).toBe(FILL_ME_IN);
+    expect("secretary" in meglomaniac).toBe(false);
 
     meglomaniac.secretary = "Agent Smith";
     expect("secretary" in meglomaniac).toBe(FILL_ME_IN);
