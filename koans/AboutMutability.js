@@ -4,7 +4,8 @@ describe("About Mutability", function() {
     var aPerson = {firstname: "John", lastname: "Smith" };
     aPerson.firstname = "Alan";
     
-    expect(aPerson.firstname).toBe(FILL_ME_IN);
+    expect(aPerson.firstname).toBe("Alan");
+    // objects are mutable--their properties can be change
   });
 
   it("should understand that constructed properties are public and mutable", function () {
@@ -16,7 +17,8 @@ describe("About Mutability", function() {
     var aPerson = new Person ("John", "Smith");
     aPerson.firstname = "Alan";
     
-    expect(aPerson.firstname).toBe(FILL_ME_IN);
+    expect(aPerson.firstname).toBe("Alan");
+    // objects derived from constructor functions are still mutable
   });
 
   it("should expect prototype properties to be public and mutable", function () {
@@ -30,13 +32,14 @@ describe("About Mutability", function() {
     };
     
     var aPerson = new Person ("John", "Smith");
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("John Smith");
     
     aPerson.getFullName = function () {
       return this.lastname + ", " + this.firstname;
     };
     
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("Smith, John");
+    // prototypal properties can be created and/or changed
   });
 
   it("should know that variables inside a constructor and constructor args are private", function () {
