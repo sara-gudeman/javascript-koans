@@ -52,20 +52,27 @@ describe("About Mutability", function() {
       this.getFullName = function () { return fullName; };
     }
     var aPerson = new Person ("John", "Smith");
+    // new person object instantiated
 
     aPerson.firstname = "Penny";
     aPerson.lastname = "Andrews";
     aPerson.fullName = "Penny Andrews";
+    // new properties created in aPerson
+    // firstname, lastname, fullName and assigned values
     
-    expect(aPerson.getFirstName()).toBe(FILL_ME_IN);
-    expect(aPerson.getLastName()).toBe(FILL_ME_IN);
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFirstName()).toBe("John");
+    expect(aPerson.getLastName()).toBe("Smith");
+    expect(aPerson.getFullName()).toBe("John Smith");
+    // original values enclosed/wrapped in functions
+    // remain unchanged by new property assignments, despite having same var names
 
     aPerson.getFullName = function () {
       return aPerson.lastname + ", " + aPerson.firstname;
     };
     
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("Andrews, Penny");
+    // getFullName function is reassigned and takes in new args (properties 
+    // assigned earlier) for first/lastname
   });
 
 });
